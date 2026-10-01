@@ -1,0 +1,5 @@
+﻿---
+import DashboardLayout from '@/layouts/DashboardLayout.astro';import Guard from '@/components/layout/Guard.astro';import PageHeader from '@/components/ui/PageHeader.astro';
+---
+<DashboardLayout title="Solicitudes de servicios"><Guard/><PageHeader title="Solicitudes de servicios" description="Seguimiento de solicitudes asociadas a reservas"/><div id="request-page-list" class="surface overflow-x-auto"><p class="p-8 text-slate-500">Cargando solicitudes…</p></div><script src="../../scripts/requests.ts"></script></DashboardLayout>
+

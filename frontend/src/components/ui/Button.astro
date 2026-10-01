@@ -1,0 +1,6 @@
+﻿---
+const { variant='primary', type='button', class: className='' }=Astro.props;
+const styles={primary:'bg-ocean text-white hover:bg-ink',secondary:'bg-mist text-ocean hover:bg-slate-200',danger:'bg-red-50 text-red-700 hover:bg-red-100',ghost:'text-ocean hover:bg-mist'};
+---
+<button type={type} class={`rounded-lg px-4 py-2.5 text-sm font-bold transition ${styles[variant as keyof typeof styles]} ${className}`}><slot /></button>
+

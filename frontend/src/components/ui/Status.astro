@@ -1,0 +1,5 @@
+﻿---
+const { value='' }=Astro.props;const good=['DISPONIBLE','PAGADO','COMPLETADA','CONFIRMADA'];const bad=['CANCELADA','MANTENIMIENTO'];const tone=good.includes(value)?'status-good':bad.includes(value)?'status-bad':['PENDIENTE','PARCIAL','RESERVADA'].includes(value)?'status-warn':'status-neutral';
+---
+<span class={`status ${tone}`}>{value}</span>
+

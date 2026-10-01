@@ -1,0 +1,9 @@
+{
+  "name": "hotel-gran-capital-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "tsx watch src/server.ts", "build": "tsc", "start": "node dist/server.js" },
+  "dependencies": { "@hono/node-server": "^1.13.7", "bcrypt": "^5.1.1", "dotenv": "^16.4.7", "hono": "^4.7.2", "jose": "^6.0.8", "pg": "^8.13.3", "zod": "^3.24.2" },
+  "devDependencies": { "@types/bcrypt": "^5.0.2", "@types/node": "^22.13.4", "@types/pg": "^8.11.11", "tsx": "^4.19.3", "typescript": "^5.7.3" }
+}

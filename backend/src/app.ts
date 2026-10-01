@@ -1,0 +1,3 @@
+import { Hono } from 'hono';import { cors } from 'hono/cors';import { routes } from './routes/routes.js';import { errorMiddleware } from './middlewares/error.middleware.js';import { env } from './config/environment.js';
+const allowedOrigins=env.CORS_ORIGIN.split(',').map((origin)=>origin.trim()).filter(Boolean);
+export const app=new Hono();app.use('*',cors({origin:(origin)=>allowedOrigins.includes(origin)?origin:'',allowHeaders:['Content-Type','Authorization'],allowMethods:['GET','POST','PUT','PATCH','OPTIONS']}));app.onError(errorMiddleware);app.get('/health',(c)=>c.json({success:true,data:{service:'hotel-gran-capital-backend',status:'ok'}}));app.route('/api',routes);

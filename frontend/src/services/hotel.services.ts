@@ -1,0 +1,8 @@
+﻿import { get,post,put,patch } from './api';import type { Client,Dashboard,Payment,Reservation,Room,Service,ServiceRequest } from '@/types/api.types';
+export const rooms={list:(query='')=>get<Room[]>(`/habitaciones${query}`),availability:(query='')=>get<Room[]>(`/habitaciones/disponibilidad${query}`),create:(v:unknown)=>post<Room>('/habitaciones',v),update:(id:number,v:unknown)=>put<Room>(`/habitaciones/${id}`,v)};
+export const clients={list:()=>get<Client[]>('/clientes'),create:(v:unknown)=>post<Client>('/clientes',v),update:(id:number,v:unknown)=>put<Client>(`/clientes/${id}`,v)};
+export const reservations={list:(query='')=>get<Reservation[]>(`/reservas${query}`),create:(v:unknown)=>post<Reservation>('/reservas',v),cancel:(id:number)=>patch<Reservation>(`/reservas/${id}/cancelar`),checkin:(id:number)=>post<Reservation>(`/reservas/${id}/checkin`,{}),checkout:(id:number)=>post<Reservation>(`/reservas/${id}/checkout`,{})};
+export const payments={list:()=>get<Payment[]>('/pagos'),create:(v:unknown)=>post<Payment>('/pagos',v)};
+export const services={list:()=>get<Service[]>('/servicios'),create:(v:unknown)=>post<Service>('/servicios',v),update:(id:number,v:unknown)=>put<Service>(`/servicios/${id}`,v),requests:()=>get<ServiceRequest[]>('/solicitudes-servicio'),createRequest:(v:unknown)=>post<ServiceRequest>('/solicitudes-servicio',v),updateRequest:(id:number,v:unknown)=>put<ServiceRequest>(`/solicitudes-servicio/${id}`,v)};
+export const reports={dashboard:()=>get<Dashboard>('/reportes/dashboard'),reservations:()=>get<Record<string,unknown>[]>('/reportes/reservas'),occupancy:()=>get<Record<string,unknown>[]>('/reportes/ocupacion'),payments:()=>get<Record<string,unknown>[]>('/reportes/pagos')};
+

@@ -1,0 +1,7 @@
+{
+  "name": "hotel-gran-capital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de gestión del Hotel Gran Capital",
+  "scripts": { "start": "node server.js" }
+}

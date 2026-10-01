@@ -1,0 +1,25 @@
+---
+import AuthLayout from '@/layouts/AuthLayout.astro';
+---
+<AuthLayout>
+  <div class="flex min-h-screen items-center justify-center bg-[linear-gradient(120deg,rgba(13,36,57,.95),rgba(13,36,57,.65)),url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1800&q=85')] bg-cover bg-center p-5">
+    <form id="register-form" class="surface w-full max-w-lg p-8 md:p-10">
+      <a href="/" class="font-display text-xl tracking-wide text-gold">HOTEL GRAN CAPITAL</a>
+      <h1 class="mt-8 font-display text-4xl text-ink">Crear una cuenta</h1>
+      <p class="mt-2 text-sm text-slate-500">Regístrate para consultar y gestionar tus reservas.</p>
+      <div id="form-error" class="mt-5"></div>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <label class="text-sm font-bold text-slate-600">Nombre<input name="nombre" class="field" required /></label>
+        <label class="text-sm font-bold text-slate-600">Apellido<input name="apellido" class="field" required /></label>
+        <label class="text-sm font-bold text-slate-600">Documento<input name="documento" class="field" required /></label>
+        <label class="text-sm font-bold text-slate-600">Teléfono<input name="telefono" class="field" required /></label>
+        <label class="text-sm font-bold text-slate-600 sm:col-span-2">Correo electrónico<input name="correo" type="email" class="field" required /></label>
+        <label class="text-sm font-bold text-slate-600">Contraseña<input name="contrasena" type="password" class="field" minlength="8" required /></label>
+        <label class="text-sm font-bold text-slate-600">Confirmar contraseña<input name="confirmacion" type="password" class="field" minlength="8" required /></label>
+      </div>
+      <button class="mt-7 w-full rounded-lg bg-ocean px-4 py-3 font-bold text-white hover:bg-ink">Crear cuenta</button>
+      <p class="mt-5 text-center text-sm text-slate-500">¿Ya tienes una cuenta? <a href="/login" class="font-bold text-ocean hover:text-gold">Inicia sesión</a></p>
+    </form>
+  </div>
+  <script src="../scripts/register.ts"></script>
+</AuthLayout>

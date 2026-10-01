@@ -1,0 +1,5 @@
+﻿---
+import DashboardLayout from '@/layouts/DashboardLayout.astro';import Guard from '@/components/layout/Guard.astro';import PageHeader from '@/components/ui/PageHeader.astro';
+---
+<DashboardLayout title="Reportes"><Guard/><PageHeader title="Reportes" description="Información operativa proporcionada por el backend"/><div id="report-error"></div><div class="grid gap-6 lg:grid-cols-3"><section class="surface p-6"><h2 class="font-display text-2xl text-ink">Reservas</h2><div id="reservation-report" class="mt-5 space-y-3"></div></section><section class="surface p-6"><h2 class="font-display text-2xl text-ink">Ocupación</h2><div id="occupancy-report" class="mt-5 space-y-3"></div></section><section class="surface p-6"><h2 class="font-display text-2xl text-ink">Pagos</h2><div id="payment-report" class="mt-5 space-y-3"></div></section></div><script src="../../scripts/reports.ts"></script></DashboardLayout>
+
